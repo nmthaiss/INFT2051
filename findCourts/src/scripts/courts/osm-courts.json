@@ -1,0 +1,2542 @@
+[
+  {
+    "id": "osm-node-4990120551",
+    "name": "Raworth Tennis Centre",
+    "sport": "tennis",
+    "latitude": -32.7299372,
+    "longitude": 151.6149458,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-node-9520887483",
+    "name": "Stockton Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.9105069,
+    "longitude": 151.787029,
+    "website": "https://play.tennis.com.au/stocktontennisclub",
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-node-9852325826",
+    "name": "Eleebana Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.9908452,
+    "longitude": 151.6383111,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-node-9852325827",
+    "name": "Whitebridge Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.976897,
+    "longitude": 151.709045,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-32776964",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.934196,
+    "longitude": 151.7671264,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-33688135",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9660901,
+    "longitude": 151.6480907,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-35974467",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9547549,
+    "longitude": 151.674094,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-56397401",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8796459,
+    "longitude": 151.6162349,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-148163742",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9405926,
+    "longitude": 151.7639796,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-159255374",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.921735,
+    "longitude": 151.7430299,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-172594975",
+    "name": "Newcastle Hill Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.9324519,
+    "longitude": 151.7789376,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-172918961",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9416035,
+    "longitude": 151.7654136,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-192213887",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8715682,
+    "longitude": 151.79554,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-198238815",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7405069,
+    "longitude": 151.8699547,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-198238820",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7404844,
+    "longitude": 151.869783,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-198238821",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7405329,
+    "longitude": 151.8701344,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-198238824",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7408916,
+    "longitude": 151.8698796,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-198238825",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7409096,
+    "longitude": 151.8700379,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-236019129",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7571022,
+    "longitude": 151.7458679,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-236355962",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7942184,
+    "longitude": 151.6635817,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-236489925",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8039161,
+    "longitude": 151.6502155,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-236661643",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8902798,
+    "longitude": 151.7929883,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-237615233",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8691149,
+    "longitude": 151.6416491,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-239698381",
+    "name": "Newcastle District Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.9224984,
+    "longitude": 151.7306344,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-240253960",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.756029,
+    "longitude": 151.5865058,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-240324680",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7576557,
+    "longitude": 151.5940049,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-240343611",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7454953,
+    "longitude": 151.6108292,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-240343617",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7206865,
+    "longitude": 151.6548785,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-240888422",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.904781,
+    "longitude": 151.5862826,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-240888424",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9045332,
+    "longitude": 151.5871298,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-242309267",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9102664,
+    "longitude": 151.7868939,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-244885330",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9762293,
+    "longitude": 151.6691115,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-244885335",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9761333,
+    "longitude": 151.6688514,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-254796558",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.919678,
+    "longitude": 151.6699565,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-263590749",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9565072,
+    "longitude": 151.6657853,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-330609125",
+    "name": "Newcastle Badminton",
+    "sport": "badminton",
+    "latitude": -32.9186765,
+    "longitude": 151.7559615,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-370855168",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9124265,
+    "longitude": 151.7099978,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-370855169",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9125015,
+    "longitude": 151.710369,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-370855170",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9124636,
+    "longitude": 151.7101821,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-370855176",
+    "name": "Lambton Park Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.9124642,
+    "longitude": 151.7101837,
+    "website": "https://www.tennis.com.au/lambtonpark/",
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400601",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7574178,
+    "longitude": 151.7460226,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400603",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7574178,
+    "longitude": 151.7458638,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400605",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7571013,
+    "longitude": 151.7460197,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400607",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7570032,
+    "longitude": 151.7462108,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400609",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.767368,
+    "longitude": 151.7404505,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400613",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7573065,
+    "longitude": 151.7463696,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400620",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7573041,
+    "longitude": 151.7462108,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372400621",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7569975,
+    "longitude": 151.7463725,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372404913",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9405956,
+    "longitude": 151.7643412,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372404920",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9405927,
+    "longitude": 151.7641572,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372404943",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9410039,
+    "longitude": 151.7641448,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372404947",
+    "name": "Learmonth Park Tennis Courts",
+    "sport": "tennis",
+    "latitude": -32.9315741,
+    "longitude": 151.7481648,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372404951",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9410008,
+    "longitude": 151.7639678,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372404956",
+    "name": "Learmonth Park Tennis Courts",
+    "sport": "tennis",
+    "latitude": -32.9315504,
+    "longitude": 151.7480155,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372528204",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9254437,
+    "longitude": 151.726413,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372528211",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9251307,
+    "longitude": 151.7264651,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372528468",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.930405,
+    "longitude": 151.7359543,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372528470",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9306762,
+    "longitude": 151.7357493,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372528472",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9306925,
+    "longitude": 151.7358992,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-372528473",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9303859,
+    "longitude": 151.7358045,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-396037242",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0422897,
+    "longitude": 151.5926451,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-396385610",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0103395,
+    "longitude": 151.5905181,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-396385613",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0098989,
+    "longitude": 151.5906023,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-396434577",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0147999,
+    "longitude": 151.5389469,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-402625278",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9748929,
+    "longitude": 151.6129516,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-403283596",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0050304,
+    "longitude": 151.6107194,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-406512673",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9618791,
+    "longitude": 151.6080652,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-407180887",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9419072,
+    "longitude": 151.6994596,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-407180888",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.941913,
+    "longitude": 151.6992956,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-407180889",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9419243,
+    "longitude": 151.699136,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-407180890",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9419159,
+    "longitude": 151.6992852,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-408655403",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8003436,
+    "longitude": 151.496183,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-411859844",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7455183,
+    "longitude": 151.6109811,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281112",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9006671,
+    "longitude": 151.6966546,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281119",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.932469,
+    "longitude": 151.7784857,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281131",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9324606,
+    "longitude": 151.77866,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281135",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8691152,
+    "longitude": 151.641476,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281136",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9324522,
+    "longitude": 151.7788336,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281143",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9324429,
+    "longitude": 151.7790582,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281144",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9077775,
+    "longitude": 151.7433388,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281145",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9324333,
+    "longitude": 151.7792166,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281146",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.907827,
+    "longitude": 151.7434995,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412281156",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9078946,
+    "longitude": 151.7436768,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412590350",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9907767,
+    "longitude": 151.6379399,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412590358",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.99075,
+    "longitude": 151.6377505,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412590447",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6990275,
+    "longitude": 151.6002237,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412590472",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9908029,
+    "longitude": 151.6381045,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-412590480",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6989976,
+    "longitude": 151.6000319,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-413029017",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8191461,
+    "longitude": 151.6978524,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-413096130",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.914963,
+    "longitude": 151.7644171,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-420908605",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.778867,
+    "longitude": 151.930456,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-421175261",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7670849,
+    "longitude": 151.8671407,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-421450982",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8007171,
+    "longitude": 151.8483201,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-422864188",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8629562,
+    "longitude": 151.7920271,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-422864202",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8606266,
+    "longitude": 151.8005658,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-422864205",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8558663,
+    "longitude": 151.7978739,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438355578",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9565386,
+    "longitude": 151.6659602,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356219",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0303597,
+    "longitude": 151.6647793,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356225",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0304311,
+    "longitude": 151.6652881,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356229",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0304079,
+    "longitude": 151.6651259,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356230",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0304543,
+    "longitude": 151.6654573,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356231",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0304765,
+    "longitude": 151.6656164,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356238",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0303816,
+    "longitude": 151.6649397,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356245",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0304983,
+    "longitude": 151.6657763,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-438356248",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0305202,
+    "longitude": 151.6659369,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-461379371",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9767059,
+    "longitude": 151.7090555,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-468713234",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7047254,
+    "longitude": 151.5747954,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-468713235",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7046985,
+    "longitude": 151.5746419,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-487848599",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0186475,
+    "longitude": 151.6957943,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-501509006",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7779816,
+    "longitude": 151.6405361,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-501509007",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.77802,
+    "longitude": 151.6407117,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-501509008",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7783413,
+    "longitude": 151.6410108,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-501509009",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7782533,
+    "longitude": 151.6408408,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-509873328",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7302284,
+    "longitude": 151.6156726,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-509873329",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7302615,
+    "longitude": 151.6153418,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-509873330",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7302749,
+    "longitude": 151.6148788,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-509873722",
+    "name": "Hunter Tennis Resort",
+    "sport": "tennis",
+    "latitude": -32.7300485,
+    "longitude": 151.6150804,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-570776247",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9948401,
+    "longitude": 151.7257299,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-571515778",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.928483,
+    "longitude": 151.7873053,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-582530050",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0055468,
+    "longitude": 151.6475955,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-582530051",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0055026,
+    "longitude": 151.6470205,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-583573340",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0171317,
+    "longitude": 151.6650504,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-617670677",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7673984,
+    "longitude": 151.5953905,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-641547519",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9047951,
+    "longitude": 151.5864727,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-641547520",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9048136,
+    "longitude": 151.5866617,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-641547521",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.904831,
+    "longitude": 151.5868516,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-641547522",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.904489,
+    "longitude": 151.58731,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-661621299",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9767564,
+    "longitude": 151.7092132,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-662536612",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7116994,
+    "longitude": 151.5191914,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-662536613",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7117856,
+    "longitude": 151.5193479,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-662536614",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7118613,
+    "longitude": 151.5195046,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-662536615",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7119416,
+    "longitude": 151.5196627,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-673985023",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0148028,
+    "longitude": 151.5391257,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-689803478",
+    "name": "Hillcrest Tennis Club",
+    "sport": "tennis",
+    "latitude": -32.8920273,
+    "longitude": 151.7385623,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-689803480",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8920431,
+    "longitude": 151.7384699,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-689803482",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8920555,
+    "longitude": 151.7386436,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-691002746",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9687938,
+    "longitude": 151.6544867,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-691002748",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9688219,
+    "longitude": 151.6546665,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-691002749",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9688486,
+    "longitude": 151.654851,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-734465788",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8060895,
+    "longitude": 151.8639097,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-767998816",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.906152,
+    "longitude": 151.7205943,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-773745595",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9100674,
+    "longitude": 151.7062517,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-832244829",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.944469,
+    "longitude": 151.6589826,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-832244830",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9444902,
+    "longitude": 151.6591454,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-832244831",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9441913,
+    "longitude": 151.6592017,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-832244832",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9441698,
+    "longitude": 151.6590384,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-887387313",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9296394,
+    "longitude": 151.7794564,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-906737452",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6973589,
+    "longitude": 151.5324586,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-907592369",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9409242,
+    "longitude": 151.7644122,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-907592370",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.941014,
+    "longitude": 151.7644103,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-933257556",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8715916,
+    "longitude": 151.7956906,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-952573553",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.042316,
+    "longitude": 151.592812,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-952573554",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0423402,
+    "longitude": 151.5929665,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-952573555",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0423643,
+    "longitude": 151.593121,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-954525308",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.90072,
+    "longitude": 151.6970129,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-962202094",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.720712,
+    "longitude": 151.6550314,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-967199053",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6960678,
+    "longitude": 151.6467261,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-974903405",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6975008,
+    "longitude": 151.5256071,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-974903408",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6979927,
+    "longitude": 151.5262666,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992379279",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7576834,
+    "longitude": 151.5941817,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992379280",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7577112,
+    "longitude": 151.5943619,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992379281",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7577371,
+    "longitude": 151.5945355,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643023",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7561543,
+    "longitude": 151.5866109,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643024",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.75628,
+    "longitude": 151.5867203,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643025",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7564069,
+    "longitude": 151.5868289,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643026",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7565333,
+    "longitude": 151.586936,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643027",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7558343,
+    "longitude": 151.5868051,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643028",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7559399,
+    "longitude": 151.5868967,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643029",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7560455,
+    "longitude": 151.5869868,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643030",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7561504,
+    "longitude": 151.5870785,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643031",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7562573,
+    "longitude": 151.5871678,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-992643032",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7563616,
+    "longitude": 151.5872572,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-996790063",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7302665,
+    "longitude": 151.6150485,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-996790064",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7302195,
+    "longitude": 151.6158477,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1006351944",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9342358,
+    "longitude": 151.7297716,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1006351945",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9342587,
+    "longitude": 151.7299363,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1006351946",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9343387,
+    "longitude": 151.7301675,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652395",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9229447,
+    "longitude": 151.7299112,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652396",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9229692,
+    "longitude": 151.730102,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652397",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9229982,
+    "longitude": 151.7303368,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652398",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9230277,
+    "longitude": 151.7305726,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652399",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9230491,
+    "longitude": 151.7307617,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652400",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.922617,
+    "longitude": 151.7299656,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652401",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9226395,
+    "longitude": 151.7301535,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652402",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9226669,
+    "longitude": 151.7303928,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652403",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9227013,
+    "longitude": 151.7306929,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652404",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9226817,
+    "longitude": 151.7310327,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652405",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9222022,
+    "longitude": 151.7300184,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652406",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9222229,
+    "longitude": 151.7301954,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652407",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9222437,
+    "longitude": 151.7303697,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652408",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9222639,
+    "longitude": 151.7305452,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652409",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9222846,
+    "longitude": 151.7307177,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652410",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9218792,
+    "longitude": 151.7301316,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652411",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9218986,
+    "longitude": 151.7303071,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652412",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9219187,
+    "longitude": 151.7304843,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652413",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9219393,
+    "longitude": 151.730663,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652414",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9219607,
+    "longitude": 151.7308394,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652415",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9223473,
+    "longitude": 151.7310894,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652416",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9223717,
+    "longitude": 151.7312655,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652417",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9220294,
+    "longitude": 151.7311522,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1012652418",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9220531,
+    "longitude": 151.7313283,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830544",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9865967,
+    "longitude": 151.7266427,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830551",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9875095,
+    "longitude": 151.7269494,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830596",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.969582,
+    "longitude": 151.7211307,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830612",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9658272,
+    "longitude": 151.7222598,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830619",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9667283,
+    "longitude": 151.7238081,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830635",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9668514,
+    "longitude": 151.7197302,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017830641",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9685745,
+    "longitude": 151.7190327,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1017954432",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9675325,
+    "longitude": 151.7229579,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1020408406",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9918359,
+    "longitude": 151.7206065,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1024149713",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.6890786,
+    "longitude": 151.5423407,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1083434428",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9631471,
+    "longitude": 151.6450804,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1083466371",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9661809,
+    "longitude": 151.6482355,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1083466372",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9662704,
+    "longitude": 151.6483824,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1084133356",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9619227,
+    "longitude": 151.6453292,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1093068439",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9057699,
+    "longitude": 151.7294491,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1093068441",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9057981,
+    "longitude": 151.729608,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1093068444",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9058196,
+    "longitude": 151.7297671,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1121560161",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9149338,
+    "longitude": 151.7645668,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1137136514",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9475301,
+    "longitude": 151.6824142,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1148450064",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7223786,
+    "longitude": 151.5447793,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1162984769",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8917371,
+    "longitude": 151.6681872,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1167241720",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9297464,
+    "longitude": 151.7740604,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1172311857",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9327001,
+    "longitude": 151.7730724,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1182615513",
+    "name": "Unnamed court",
+    "sport": "pickleball",
+    "latitude": -32.8039127,
+    "longitude": 151.6502137,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1197865632",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9958105,
+    "longitude": 151.6405244,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1198860920",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.765096,
+    "longitude": 151.7445647,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1217938447",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7491826,
+    "longitude": 151.6549793,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1243640053",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8975006,
+    "longitude": 151.7066181,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1249787286",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7671536,
+    "longitude": 151.5951895,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1300943084",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9087045,
+    "longitude": 151.7820654,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1308953355",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7620586,
+    "longitude": 151.6310437,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1308953356",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7612526,
+    "longitude": 151.6295173,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1308953357",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7667936,
+    "longitude": 151.6318248,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1308953380",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7661781,
+    "longitude": 151.6329235,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1377932822",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9102947,
+    "longitude": 151.7870798,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1377932823",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9103321,
+    "longitude": 151.7873115,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1377932824",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9103598,
+    "longitude": 151.7874837,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1377932825",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9103876,
+    "longitude": 151.7876574,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1378248376",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.7633167,
+    "longitude": 151.5876943,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1409640813",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0113033,
+    "longitude": 151.6729635,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1413988258",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9241357,
+    "longitude": 151.7063945,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1501258970",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9885971,
+    "longitude": 151.7193015,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1517954282",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9424996,
+    "longitude": 151.7475694,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1521274894",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9760835,
+    "longitude": 151.6686851,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1521274895",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9759804,
+    "longitude": 151.668524,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1521274896",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9759272,
+    "longitude": 151.6683436,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1556564804",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.9311423,
+    "longitude": 151.7317008,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1557985031",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8265087,
+    "longitude": 151.6393681,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1557985038",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8256277,
+    "longitude": 151.6434327,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1557985052",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8329126,
+    "longitude": 151.6480283,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-way-1557985053",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -32.8319952,
+    "longitude": 151.6461771,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-relation-7167714",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0108146,
+    "longitude": 151.7134941,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  },
+  {
+    "id": "osm-relation-7167715",
+    "name": "Unnamed court",
+    "sport": "tennis",
+    "latitude": -33.0108801,
+    "longitude": 151.7134802,
+    "website": null,
+    "source": "osm",
+    "verified": false
+  }
+]

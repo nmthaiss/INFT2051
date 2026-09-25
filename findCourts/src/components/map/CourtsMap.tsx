@@ -11,27 +11,28 @@ export default function Map() {
     const [error, setError] = useState<string | null>(null);
 
     async function enableLocation() {
-    const { status } = await Location.requestForegroundPermissionsAsync();
-    if (status !== 'granted') {
-        setError('Permission to access location was denied');
-        return;
-    }
+        const { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+            setError('Permission to access location was denied');
+            return;
+        }
 
-    setLocationAllowed(true);
+        setLocationAllowed(true);
 
-    const location = await Location.getCurrentPositionAsync({});
+        const location = await Location.getCurrentPositionAsync({});
 
-    mapRef.current?.animateToRegion({
-        latitude: location.coords.latitude,
-        longitude: location.coords.longitude,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-    }, 500);
+        // 
+        mapRef.current?.animateToRegion({
+            latitude: location.coords.latitude,
+            longitude: location.coords.longitude,
+            latitudeDelta: 0.01,            // zoom level of map, 0.01 is ~ 1.1km
+            longitudeDelta: 0.01,
+        }, 500);
     }
     useEffect(() => {
-    enableLocation().catch(() => {
-        setError('Unable to get your current location.');
-    });
+        enableLocation().catch(() => {
+            setError('Unable to get your current location.');
+        });
     }, []);
 
     return (
@@ -47,14 +48,14 @@ export default function Map() {
         </MapView>
         {error && <Text style={styles.error}>{error}</Text>}
         <Pressable
-        style={styles.locationButton}
-        onPress={() => {
-            enableLocation().catch(() => {
-            setError('Unable to get your current location.');
-            });
-        }}
+            style={styles.locationButton}
+            onPress={() => {
+                enableLocation().catch(() => {
+                setError('Unable to get your current location.');
+                });
+            }}
         >
-        <Ionicons name="locate" size={26} color="#ffffff" />
+            <Ionicons name="locate" size={26} color="#ffffff" />
         </Pressable>
     </View>
     );
