@@ -1,3 +1,4 @@
+
 import { Linking, Pressable, StyleSheet, Text, View } from 'react-native';
 
 function Attribution() {
