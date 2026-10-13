@@ -10,8 +10,8 @@ type OverpassElement =
     type: "way" | "relation";
     id: number;
     center: {
-    lat: number;
-    lon: number;
+      lat: number;
+      lon: number;
     };
     tags?: Record<string, string>;
 };

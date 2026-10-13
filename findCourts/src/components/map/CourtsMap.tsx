@@ -1,14 +1,39 @@
 import * as Location from 'expo-location';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import MapView from 'react-native-maps';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import CourtsMarker from './CourtsMarker';
+import CourtsMarker, { Court } from './CourtsMarker';
+import SearchBar from './SearchBar';
+import courtsData from '../../scripts/courts/osm-courts.json';
+
+const courts = courtsData as Court[];
 
 export default function Map() {
     const mapRef = useRef<MapView>(null);
     const [locationAllowed, setLocationAllowed] = useState(false);
     const [error, setError] = useState<string | null>(null);
+    const [query, setQuery] = useState('');
+    const filteredCourts = useMemo(() => {
+        const normalizedQuery = query.trim().toLocaleLowerCase();
+        if (!normalizedQuery) return courts;
+
+        return courts.filter((court) =>
+            court.name.toLocaleLowerCase().includes(normalizedQuery)
+            || court.address?.toLocaleLowerCase().includes(normalizedQuery),
+        );
+    }, [query]);
+
+    function focusFirstResult() {
+        const firstCourt = filteredCourts[0];
+        if (!firstCourt || !query.trim()) return;
+        mapRef.current?.animateToRegion({
+            latitude: firstCourt.latitude,
+            longitude: firstCourt.longitude,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+        }, 400);
+    }
 
     async function enableLocation() {
         const { status } = await Location.requestForegroundPermissionsAsync();
@@ -30,6 +55,8 @@ export default function Map() {
         }, 500);
     }
     useEffect(() => {
+        // Permission and position state are intentionally initialized on mount.
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         enableLocation().catch(() => {
             setError('Unable to get your current location.');
         });
@@ -44,8 +71,12 @@ export default function Map() {
             showsUserLocation={locationAllowed}
             showsPointsOfInterests={false}
         >
-            <CourtsMarker />
+            <CourtsMarker courts={filteredCourts} />
         </MapView>
+        <SearchBar value={query} onChangeText={setQuery} onSubmit={focusFirstResult} />
+        {query.trim().length > 0 && filteredCourts.length === 0 && (
+            <Text style={styles.noResults}>No courts match “{query.trim()}”</Text>
+        )}
         {error && <Text style={styles.error}>{error}</Text>}
         <Pressable
             style={styles.locationButton}
@@ -79,6 +110,17 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         padding: 10,
         borderRadius: 8,
+    },
+    noResults: {
+        position: 'absolute',
+        top: 74,
+        alignSelf: 'center',
+        backgroundColor: '#ffffff',
+        color: '#172b4d',
+        paddingHorizontal: 14,
+        paddingVertical: 8,
+        borderRadius: 8,
+        elevation: 3,
     },
     locationButton: {
         position: 'absolute',
