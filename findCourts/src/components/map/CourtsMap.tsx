@@ -1,7 +1,7 @@
 import * as Location from 'expo-location';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { type Region } from 'react-native-maps';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CourtsMarker, { Court } from './CourtsMarker';
 import SearchBar from './SearchBar';
@@ -14,6 +14,7 @@ export default function Map() {
     const [locationAllowed, setLocationAllowed] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [query, setQuery] = useState('');
+    const [markerSize, setMarkerSize] = useState(30);
     const filteredCourts = useMemo(() => {
         const normalizedQuery = query.trim().toLocaleLowerCase();
         if (!normalizedQuery) return courts;
@@ -24,15 +25,48 @@ export default function Map() {
         );
     }, [query]);
 
-    function focusFirstResult() {
-        const firstCourt = filteredCourts[0];
-        if (!firstCourt || !query.trim()) return;
-        mapRef.current?.animateToRegion({
-            latitude: firstCourt.latitude,
-            longitude: firstCourt.longitude,
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01,
-        }, 400);
+    function focusSearchResults() {
+        if (!query.trim() || filteredCourts.length === 0) return;
+        if (filteredCourts.length === 1) {
+            const firstCourt = filteredCourts[0];
+            mapRef.current?.animateToRegion({
+                latitude: firstCourt.latitude,
+                longitude: firstCourt.longitude,
+                latitudeDelta: 0.01,
+                longitudeDelta: 0.01,
+            }, 400);
+            return;
+        }
+        const coordinates = filteredCourts.map((court) => ({
+            latitude: court.latitude,
+            longitude: court.longitude,
+        }));
+
+        mapRef.current?.fitToCoordinates(coordinates, {
+            edgePadding: {
+                top: 100,
+                right: 50,
+                bottom: 100,
+                left: 50,
+            },
+            animated: true,
+        });
+    }
+
+    function markerSizeForRegion(region: Region) {
+        const MAX_SIZE = 40;
+        const MIN_SIZE = 16;
+        const MIN_DELTA = 0.01;
+        const HIDE_DELTA = 0.4;
+
+        if (region.longitudeDelta >= HIDE_DELTA) {
+            return 0;
+        }
+
+        const delta = Math.max(region.longitudeDelta, MIN_DELTA);
+
+        const scale = Math.log(HIDE_DELTA / delta) / Math.log(HIDE_DELTA / MIN_DELTA);
+        return Math.round(MIN_SIZE + scale * (MAX_SIZE - MIN_SIZE));
     }
 
     async function enableLocation() {
@@ -54,6 +88,7 @@ export default function Map() {
             longitudeDelta: 0.01,
         }, 500);
     }
+
     useEffect(() => {
         // Permission and position state are intentionally initialized on mount.
         // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -70,10 +105,22 @@ export default function Map() {
             showsCompass
             showsUserLocation={locationAllowed}
             showsPointsOfInterests={false}
+            onRegionChangeComplete={(region) => {
+                setMarkerSize(markerSizeForRegion(region));
+            }}
         >
-            <CourtsMarker courts={filteredCourts} />
+            {markerSize > 0 && (
+                <CourtsMarker 
+                    courts={filteredCourts}
+                    markerSize={markerSize} 
+                />
+            )}
+            
         </MapView>
-        <SearchBar value={query} onChangeText={setQuery} onSubmit={focusFirstResult} />
+        <SearchBar 
+            value={query} 
+            onChangeText={setQuery} 
+            onSubmit={focusSearchResults} />
         {query.trim().length > 0 && filteredCourts.length === 0 && (
             <Text style={styles.noResults}>No courts match “{query.trim()}”</Text>
         )}

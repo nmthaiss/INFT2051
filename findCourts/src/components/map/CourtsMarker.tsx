@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet} from 'react-native';
 import { Marker } from 'react-native-maps';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { useMemo } from 'react';
 
 export type Court = {
     id: string;
@@ -17,6 +18,11 @@ type CourtCluster = {
     latitude: number;
     longitude: number;
 };
+
+type CourtsMarkerProps = {
+    courts: Court[];
+    markerSize: number;
+}
 
 const CLUSTER_DISTANCE_METRES = 80;
 const EARTH_APPROX_RADIUS_METRES = 6371000;
@@ -74,11 +80,15 @@ function clusterTitle(cluster: CourtCluster) {
     return namedCourts[0] ?? `${cluster.courts.length} nearby courts`;
 }
 
-export default function CourtsMarker({ courts }: { courts: Court[] }) {
+export default function CourtsMarker({ courts, markerSize }: CourtsMarkerProps) {
+    const clusters = useMemo(() => clusterCourts(courts), [courts]);        // to prevent recalc of clusters, distance,... when same clusters r presented
+    const clusterMarkerSize = markerSize + 8;
     return (
         <>
-        {clusterCourts(courts).map((cluster) => {
+        {clusters.map((cluster) => {
             // new set of sports for each cluster since courts can be used for many sports
+            const isCluster = cluster.courts.length > 1;
+            const size = isCluster ? clusterMarkerSize : markerSize;
             const sports = [...new Set(cluster.courts.map((court) => court.sport))].join(', ');
             const address = cluster.courts.find((court) => court.address)?.address;
             const details = [
@@ -97,11 +107,20 @@ export default function CourtsMarker({ courts }: { courts: Court[] }) {
                 title={clusterTitle(cluster)}
                 description={details}
             >
-                <View style={[styles.marker, cluster.courts.length > 1 && styles.clusterMarker]}>
-                    {cluster.courts.length > 1 ? (
-                        <Text style={styles.markerText}>{cluster.courts.length}</Text>
+                <View style={[styles.marker, isCluster && styles.clusterMarker, 
+                    {
+                        width: size,
+                        height: size,
+                        borderRadius: size /2,
+                    }]}
+                >
+                    {isCluster ? (
+                        <Text style={[styles.markerText, {fontSize: markerSize * 0.44}]}
+                        >
+                            {cluster.courts.length}
+                        </Text>
                     ) : (
-                        <Ionicons name="tennisball" size={20} color="#ffffff" />
+                        <Ionicons name="tennisball" size={markerSize * 0.58} color="#ffffff" />
                     )}
                 </View>
             </Marker>
@@ -113,9 +132,6 @@ export default function CourtsMarker({ courts }: { courts: Court[] }) {
 
 const styles = StyleSheet.create({
     marker: {
-        width: 34,
-        height: 34,
-        borderRadius: 17,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#006eff',
@@ -123,9 +139,6 @@ const styles = StyleSheet.create({
         borderWidth: 2,
     },
     clusterMarker: {
-        width: 42,
-        height: 42,
-        borderRadius: 21,
         backgroundColor: '#172b4d',
     },
     markerText: {
