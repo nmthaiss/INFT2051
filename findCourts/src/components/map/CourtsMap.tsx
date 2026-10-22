@@ -1,13 +1,23 @@
 import * as Location from 'expo-location';
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import MapView, { type Region } from 'react-native-maps';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import CourtsMarker, { Court } from './CourtsMarker';
 import SearchBar from './SearchBar';
-import courtsData from '../../scripts/courts/osm-courts.json';
+import fallbackCourtsData from '../../scripts/courts/osm-courts.json';
+import { isSupabaseConfigured } from '@/lib/supabase';
+import { loadCachedCourts, saveCachedCourts } from '@/services/courtCache';
+import { getCourts } from '@/services/courts';
 
-const courts = courtsData as Court[];
+const fallbackCourts = fallbackCourtsData as Court[];
+const NEARBY_REGION_DELTA = 0.12;
+const DEFAULT_REGION = {
+    latitude: -32.9283,
+    longitude: 151.7817,
+    latitudeDelta: 0.06,
+    longitudeDelta: 0.06,
+};
 
 export default function Map() {
     const mapRef = useRef<MapView>(null);
@@ -15,6 +25,10 @@ export default function Map() {
     const [error, setError] = useState<string | null>(null);
     const [query, setQuery] = useState('');
     const [markerSize, setMarkerSize] = useState(30);
+    const [courts, setCourts] = useState<Court[]>(
+        isSupabaseConfigured ? [] : fallbackCourts,
+    );
+    const [courtsLoading, setCourtsLoading] = useState(false);
     const filteredCourts = useMemo(() => {
         const normalizedQuery = query.trim().toLocaleLowerCase();
         if (!normalizedQuery) return courts;
@@ -23,7 +37,7 @@ export default function Map() {
             court.name.toLocaleLowerCase().includes(normalizedQuery)
             || court.address?.toLocaleLowerCase().includes(normalizedQuery),
         );
-    }, [query]);
+    }, [courts, query]);
 
     function focusSearchResults() {
         if (!query.trim() || filteredCourts.length === 0) return;
@@ -69,10 +83,39 @@ export default function Map() {
         return Math.round(MIN_SIZE + scale * (MAX_SIZE - MIN_SIZE));
     }
 
-    async function enableLocation() {
+    const loadCourtsForRegion = useCallback(async (region: Region) => {
+        if (!isSupabaseConfigured) return;
+
+        setCourtsLoading(true);
+        setError(null);
+
+        try {
+            const result = await getCourts({
+                south: region.latitude - region.latitudeDelta / 2,
+                west: region.longitude - region.longitudeDelta / 2,
+                north: region.latitude + region.latitudeDelta / 2,
+                east: region.longitude + region.longitudeDelta / 2,
+            });
+            setCourts(result.courts);
+            await saveCachedCourts(result.courts);
+        } catch (loadError) {
+            const cached = await loadCachedCourts();
+            if (cached) {
+                setCourts(cached.courts);
+            }
+
+            const message = loadError instanceof Error ? loadError.message : 'Unable to load courts.';
+            setError(cached ? `${message} Showing saved courts.` : message);
+        } finally {
+            setCourtsLoading(false);
+        }
+    }, []);
+
+    const enableLocation = useCallback(async () => {
         const { status } = await Location.requestForegroundPermissionsAsync();
         if (status !== 'granted') {
             setError('Permission to access location was denied');
+            await loadCourtsForRegion(DEFAULT_REGION);
             return;
         }
 
@@ -80,28 +123,44 @@ export default function Map() {
 
         const location = await Location.getCurrentPositionAsync({});
 
-        // 
-        mapRef.current?.animateToRegion({
+        const userRegion = {
             latitude: location.coords.latitude,
             longitude: location.coords.longitude,
-            latitudeDelta: 0.01,            // zoom level of map, 0.01 is ~ 1.1km
-            longitudeDelta: 0.01,
-        }, 500);
-    }
+            latitudeDelta: NEARBY_REGION_DELTA,
+            longitudeDelta: NEARBY_REGION_DELTA,
+        };
+
+        mapRef.current?.animateToRegion(userRegion, 500);
+        await loadCourtsForRegion(userRegion);
+    }, [loadCourtsForRegion]);
 
     useEffect(() => {
-        // Permission and position state are intentionally initialized on mount.
-        // eslint-disable-next-line react-hooks/set-state-in-effect
-        enableLocation().catch(() => {
-            setError('Unable to get your current location.');
+        let active = true;
+
+        async function initializeMap() {
+            const cached = await loadCachedCourts();
+            if (active && cached) {
+                setCourts(cached.courts);
+            }
+
+            await enableLocation();
+        }
+
+        initializeMap().catch(() => {
+            if (active) setError('Unable to initialize the map.');
         });
-    }, []);
+
+        return () => {
+            active = false;
+        };
+    }, [enableLocation]);
 
     return (
     <View style={styles.container}>
         <MapView 
             style={styles.map}
             ref={mapRef}
+            initialRegion={DEFAULT_REGION}
             showsCompass
             showsUserLocation={locationAllowed}
             showsPointsOfInterests={false}
@@ -121,6 +180,10 @@ export default function Map() {
             value={query} 
             onChangeText={setQuery} 
             onSubmit={focusSearchResults} />
+        {courtsLoading && <Text style={styles.loading}>Loading courts...</Text>}
+        {!courtsLoading && !error && !query.trim() && courts.length === 0 && (
+            <Text style={styles.noResults}>No courts found nearby</Text>
+        )}
         {query.trim().length > 0 && filteredCourts.length === 0 && (
             <Text style={styles.noResults}>No courts match “{query.trim()}”</Text>
         )}
@@ -152,13 +215,26 @@ const styles = StyleSheet.create({
     },
     error: {
         position: 'absolute',
-        top: 60,
+        top: 128,
         alignSelf: 'center',
         backgroundColor: 'white',
+        marginHorizontal: 16,
         padding: 10,
         borderRadius: 8,
+        elevation: 3,
     },
     noResults: {
+        position: 'absolute',
+        top: 74,
+        alignSelf: 'center',
+        backgroundColor: '#ffffff',
+        color: '#172b4d',
+        paddingHorizontal: 14,
+        paddingVertical: 8,
+        borderRadius: 8,
+        elevation: 3,
+    },
+    loading: {
         position: 'absolute',
         top: 74,
         alignSelf: 'center',

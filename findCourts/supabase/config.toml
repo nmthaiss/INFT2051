@@ -1,0 +1,4 @@
+project_id = "findCourts"
+
+[functions.get-courts]
+verify_jwt = false
