@@ -48,23 +48,34 @@ export default function Map() {
         };
     }
 
-    const selectedIsAlrLoaded = selectedCluster 
-        ? courtClusters.some(   // check all cluster in this list and compare id to see if any cluster in here is equal to selected cluster
-            (cluster) => cluster.id === selectedCluster.id) : false;
+    const selectedCourtIds = new Set(
+        selectedCluster?.courts.map((court) => court.id) ?? [],
+    );
 
-    const displayedClusters = selectedCluster && !selectedIsAlrLoaded 
-        ? [...courtClusters, selectedCluster] : courtClusters;
+    const loadedVersionOfSelectedCluster = selectedCluster
+        ? courtClusters.find((cluster) =>
+            cluster.courts.some((court) =>          // check all cluster in this list and compare id to see if any cluster in here is equal to selected cluster
+                selectedCourtIds.has(court.id),
+            ),
+        )
+        : undefined;
+
+    const displayedClusters =
+        selectedCluster && !loadedVersionOfSelectedCluster
+            ? [...courtClusters, selectedCluster] : courtClusters; 
+            
+    const focusedCluster = loadedVersionOfSelectedCluster ?? selectedCluster;
 
     useEffect(() => {
-        if (!selectedCluster) return;
+        if (!focusedCluster) return;
 
         mapRef.current?.animateToRegion({
-            latitude: selectedCluster.latitude,
-            longitude: selectedCluster.longitude,
+            latitude: focusedCluster.latitude,
+            longitude: focusedCluster.longitude,
             latitudeDelta: 0.01,
             longitudeDelta: 0.01,
         }, 400);
-    },[selectedCluster]);
+    },[focusedCluster]);
 
     // give marker size based on how zoomed out/in the map currently is
     function markerSizeForRegion(region: Region) {
@@ -126,7 +137,7 @@ export default function Map() {
             longitudeDelta: NEARBY_REGION_DELTA,
         };
 
-        mapRef.current?.animateToRegion(userRegion, 500);
+        mapRef.current?.animateToRegion(userRegion, 400);
         await loadCourts(boundsFromRegion(userRegion));
     }, [loadCourts, setSelectedCluster]);
 
