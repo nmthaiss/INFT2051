@@ -2,3 +2,6 @@ project_id = "findCourts"
 
 [functions.get-courts]
 verify_jwt = false
+
+[functions.search-courts]
+verify_jwt = false

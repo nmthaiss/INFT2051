@@ -1,6 +1,5 @@
 import Storage from 'expo-sqlite/kv-store';
-
-import type { Court } from '@/components/map/CourtsMarker';
+import type { Court } from "@/type/Court";
 
 const LAST_COURTS_KEY = 'courts:last-successful-batch';
 

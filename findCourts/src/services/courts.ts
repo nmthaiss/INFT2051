@@ -4,33 +4,24 @@ import {
     FunctionsRelayError,
 } from '@supabase/supabase-js';
 
-import type { Court } from '@/components/map/CourtsMarker';
+import type { Court } from '@/type/Court';
+import type { CourtBounds } from '@/type/CourtBounds';
 import { supabase } from '@/lib/supabase';
-
-export type CourtBounds = {
-    south: number;
-    west: number;
-    north: number;
-    east: number;
-};
 
 type GetCourtsResponse = {
     courts: Court[];
     cache: {
         fetchedTiles: number;
         reusedTiles: number;
+        addressEnrichmentStarted: number;
     };
 };
 
-export async function getCourts(bounds: CourtBounds) {
-    if (!supabase) {
-        throw new Error('Supabase environment variables are not configured.');
-    }
+type SearchCourtsResponse = {
+    courts: Court[];
+};
 
-    const { data, error } = await supabase.functions.invoke<GetCourtsResponse>('get-courts', {
-        body: bounds,
-    });
-
+async function throwFunctionError(error: unknown): Promise<never> {
     if (error instanceof FunctionsHttpError) {
         const responseBody = await error.context.clone().json().catch(() => null) as {
             error?: string;
@@ -47,8 +38,20 @@ export async function getCourts(bounds: CourtBounds) {
         throw new Error(`Unable to reach Supabase: ${error.message}`);
     }
 
+    throw error;
+}
+
+export async function getCourts(bounds: CourtBounds) {
+    if (!supabase) {
+        throw new Error('Supabase environment variables are not configured.');
+    }
+
+    const { data, error } = await supabase.functions.invoke<GetCourtsResponse>('get-courts', {
+        body: bounds,
+    });
+
     if (error) {
-        throw error;
+        await throwFunctionError(error);
     }
 
     if (!data) {
@@ -56,4 +59,21 @@ export async function getCourts(bounds: CourtBounds) {
     }
 
     return data;
+}
+
+export async function searchCourts(query: string) {
+    if (!supabase) return [];
+
+    const normalizedQuery = query.trim();
+    if (normalizedQuery.length < 2) return [];
+
+    const { data, error } = await supabase.functions.invoke<SearchCourtsResponse>('search-courts', {
+        body: { query: normalizedQuery },
+    });
+
+    if (error) {
+        await throwFunctionError(error);
+    }
+
+    return data?.courts ?? [];
 }

@@ -1,72 +1,72 @@
-import * as Location from 'expo-location';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import MapView, { type Region } from 'react-native-maps';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import CourtsMarker, { Court } from './CourtsMarker';
-import SearchBar from './SearchBar';
-import fallbackCourtsData from '../../scripts/courts/osm-courts.json';
-import { isSupabaseConfigured } from '@/lib/supabase';
-import { loadCachedCourts, saveCachedCourts } from '@/services/courtCache';
-import { getCourts } from '@/services/courts';
+import CourtsMarker from './CourtsMarker';
+import { responsiveFontSize } from '@/utils/resposiveStyles';
+import { router } from 'expo-router';
+import { useResponsiveTopOffset } from '@/hooks/useResponsiveTopOffset';
+import { useCourtsContext } from '@/context/CourtsContext';
+import { useAppTheme } from '@/theme/appTheme';
+import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 
-const fallbackCourts = fallbackCourtsData as Court[];
 const NEARBY_REGION_DELTA = 0.12;
-const DEFAULT_REGION = {
-    latitude: -32.9283,
-    longitude: 151.7817,
-    latitudeDelta: 0.06,
-    longitudeDelta: 0.06,
-};
+type LocationStatus =
+    | 'checking'
+    | 'granted'
+    | 'denied';
 
 export default function Map() {
+    const { colors } = useAppTheme();
+    const controlsTop = useResponsiveTopOffset();
     const mapRef = useRef<MapView>(null);
-    const [locationAllowed, setLocationAllowed] = useState(false);
-    const [error, setError] = useState<string | null>(null);
-    const [query, setQuery] = useState('');
+    const [locationStatus, setLocationStatus] = useState<LocationStatus>('checking');
+    const [locationError, setLocationError] = useState<string | null>(null);
     const [markerSize, setMarkerSize] = useState(30);
-    const [courts, setCourts] = useState<Court[]>(
-        isSupabaseConfigured ? [] : fallbackCourts,
-    );
-    const [courtsLoading, setCourtsLoading] = useState(false);
-    const filteredCourts = useMemo(() => {
-        const normalizedQuery = query.trim().toLocaleLowerCase();
-        if (!normalizedQuery) return courts;
+    const {
+        courts,
+        courtClusters,
+        courtsLoading,
+        courtsError,
+        cacheLoadFinished,
+        loadCourts,
+        selectedCluster,
+        setSelectedCluster,
+    } = useCourtsContext();
 
-        return courts.filter((court) =>
-            court.name.toLocaleLowerCase().includes(normalizedQuery)
-            || court.address?.toLocaleLowerCase().includes(normalizedQuery),
-        );
-    }, [courts, query]);
+    const selectedClusterName = selectedCluster?.courts[0]?.name;
 
-    function focusSearchResults() {
-        if (!query.trim() || filteredCourts.length === 0) return;
-        if (filteredCourts.length === 1) {
-            const firstCourt = filteredCourts[0];
-            mapRef.current?.animateToRegion({
-                latitude: firstCourt.latitude,
-                longitude: firstCourt.longitude,
-                latitudeDelta: 0.01,
-                longitudeDelta: 0.01,
-            }, 400);
-            return;
-        }
-        const coordinates = filteredCourts.map((court) => ({
-            latitude: court.latitude,
-            longitude: court.longitude,
-        }));
+    const displayedError = locationError ?? courtsError;
+    const needsManualSearch = cacheLoadFinished && locationStatus === 'denied' && courts.length === 0;
 
-        mapRef.current?.fitToCoordinates(coordinates, {
-            edgePadding: {
-                top: 100,
-                right: 50,
-                bottom: 100,
-                left: 50,
-            },
-            animated: true,
-        });
+    function boundsFromRegion(region: Region) {
+        return {
+            south: region.latitude - region.latitudeDelta / 2,
+            west: region.longitude - region.longitudeDelta / 2,
+            north: region.latitude + region.latitudeDelta / 2,
+            east: region.longitude + region.longitudeDelta / 2,
+        };
     }
 
+    const selectedIsAlrLoaded = selectedCluster 
+        ? courtClusters.some(   // check all cluster in this list and compare id to see if any cluster in here is equal to selected cluster
+            (cluster) => cluster.id === selectedCluster.id) : false;
+
+    const displayedClusters = selectedCluster && !selectedIsAlrLoaded 
+        ? [...courtClusters, selectedCluster] : courtClusters;
+
+    useEffect(() => {
+        if (!selectedCluster) return;
+
+        mapRef.current?.animateToRegion({
+            latitude: selectedCluster.latitude,
+            longitude: selectedCluster.longitude,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+        }, 400);
+    },[selectedCluster]);
+
+    // give marker size based on how zoomed out/in the map currently is
     function markerSizeForRegion(region: Region) {
         const MAX_SIZE = 40;
         const MIN_SIZE = 16;
@@ -83,45 +83,41 @@ export default function Map() {
         return Math.round(MIN_SIZE + scale * (MAX_SIZE - MIN_SIZE));
     }
 
-    const loadCourtsForRegion = useCallback(async (region: Region) => {
-        if (!isSupabaseConfigured) return;
+    useEffect(() => {
+        if (!cacheLoadFinished) return;
+        if (locationStatus !== 'denied') return;
+        if (courtClusters.length === 0) return;
 
-        setCourtsLoading(true);
-        setError(null);
-
-        try {
-            const result = await getCourts({
-                south: region.latitude - region.latitudeDelta / 2,
-                west: region.longitude - region.longitudeDelta / 2,
-                north: region.latitude + region.latitudeDelta / 2,
-                east: region.longitude + region.longitudeDelta / 2,
-            });
-            setCourts(result.courts);
-            await saveCachedCourts(result.courts);
-        } catch (loadError) {
-            const cached = await loadCachedCourts();
-            if (cached) {
-                setCourts(cached.courts);
-            }
-
-            const message = loadError instanceof Error ? loadError.message : 'Unable to load courts.';
-            setError(cached ? `${message} Showing saved courts.` : message);
-        } finally {
-            setCourtsLoading(false);
-        }
-    }, []);
+        mapRef.current?.fitToCoordinates(
+            courtClusters.map((cluster) => ({
+                latitude: cluster.latitude,
+                longitude: cluster.longitude,
+            })),
+            {
+                edgePadding: {
+                    top: 100,
+                    right: 50,
+                    bottom: 100,
+                    left: 50,
+                },
+                animated: false,
+            },
+        );
+    }, [cacheLoadFinished, locationStatus, courtClusters]);
 
     const enableLocation = useCallback(async () => {
-        const { status } = await Location.requestForegroundPermissionsAsync();
+        const { status } = await requestForegroundPermissionsAsync();
         if (status !== 'granted') {
-            setError('Permission to access location was denied');
-            await loadCourtsForRegion(DEFAULT_REGION);
+            setLocationError('Permission to access location was denied');
+            setLocationStatus('denied');
             return;
         }
 
-        setLocationAllowed(true);
+        setLocationStatus('granted');
+        setLocationError(null);
+        setSelectedCluster(null);
 
-        const location = await Location.getCurrentPositionAsync({});
+        const location = await getCurrentPositionAsync({});
 
         const userRegion = {
             latitude: location.coords.latitude,
@@ -131,74 +127,104 @@ export default function Map() {
         };
 
         mapRef.current?.animateToRegion(userRegion, 500);
-        await loadCourtsForRegion(userRegion);
-    }, [loadCourtsForRegion]);
+        await loadCourts(boundsFromRegion(userRegion));
+    }, [loadCourts, setSelectedCluster]);
 
     useEffect(() => {
-        let active = true;
+        if (!cacheLoadFinished) return;
 
-        async function initializeMap() {
-            const cached = await loadCachedCourts();
-            if (active && cached) {
-                setCourts(cached.courts);
-            }
+        const timeout = setTimeout(() => {
+            enableLocation().catch(() => {
+                setLocationError('Unable to get your current location.');
+                setLocationStatus('denied');
+            });
+        }, 0);
 
-            await enableLocation();
-        }
-
-        initializeMap().catch(() => {
-            if (active) setError('Unable to initialize the map.');
-        });
-
-        return () => {
-            active = false;
-        };
-    }, [enableLocation]);
+        return () => clearTimeout(timeout);
+    }, [cacheLoadFinished, enableLocation]);
 
     return (
-    <View style={styles.container}>
-        <MapView 
-            style={styles.map}
-            ref={mapRef}
-            initialRegion={DEFAULT_REGION}
-            showsCompass
-            showsUserLocation={locationAllowed}
-            showsPointsOfInterests={false}
-            onRegionChangeComplete={(region) => {
-                setMarkerSize(markerSizeForRegion(region));
-            }}
-        >
-            {markerSize > 0 && (
-                <CourtsMarker 
-                    courts={filteredCourts}
-                    markerSize={markerSize} 
-                />
+        <View style={styles.container}>
+            <MapView
+                style={styles.map}
+                ref={mapRef}
+                showsCompass
+                showsUserLocation={(locationStatus === "granted")}
+                showsPointsOfInterests={false}
+                onRegionChangeComplete={(region) => {
+                    setMarkerSize(markerSizeForRegion(region));
+                }}
+            >
+                {markerSize > 0 && (
+                    <CourtsMarker
+                        clusters={displayedClusters}
+                        markerSize={markerSize}
+                    />
+                )}
+
+            </MapView>
+            <Pressable
+                accessibilityRole="button"
+                accessibilityLabel="Search courts"
+                onPress={() => router.push('/search')}
+                style={[styles.searchLauncher, { top: controlsTop , backgroundColor: colors.background}]}
+            >
+                <Ionicons name="search" size={20} color={colors.icons} />
+                
+                <Text style={styles.searchLauncherText}>
+                    {selectedClusterName ?? 'Search name or address'}
+                </Text>
+            </Pressable>
+
+            {courtsLoading && (
+                <Text style={[styles.info, { top: controlsTop + 58 }]}>Loading courts...</Text>
             )}
-            
-        </MapView>
-        <SearchBar 
-            value={query} 
-            onChangeText={setQuery} 
-            onSubmit={focusSearchResults} />
-        {courtsLoading && <Text style={styles.loading}>Loading courts...</Text>}
-        {!courtsLoading && !error && !query.trim() && courts.length === 0 && (
-            <Text style={styles.noResults}>No courts found nearby</Text>
-        )}
-        {query.trim().length > 0 && filteredCourts.length === 0 && (
-            <Text style={styles.noResults}>No courts match “{query.trim()}”</Text>
-        )}
-        {error && <Text style={styles.error}>{error}</Text>}
-        <Pressable
-            style={styles.locationButton}
-            onPress={() => {
-                enableLocation().catch(() => {
-                setError('Unable to get your current location.');
-                });
-            }}
-        >
-            <Ionicons name="locate" size={26} color="#ffffff" />
-        </Pressable>
-    </View>
+            {!courtsLoading && !displayedError && locationStatus === 'granted' && courts.length === 0 && (
+                <Text style={[styles.info, { top: controlsTop + 58 }]}>No courts found nearby</Text>
+            )}
+            {needsManualSearch && (
+                <View style={styles.locationFallback}>
+                    <Text style={styles.locationFallbackTitle}>
+                        Find courts without location
+                    </Text>
+
+                    <Text style={styles.locationFallbackMessage}>
+                        Search for a court or enable location to find courts near you.
+                    </Text>
+
+                    <Pressable
+                        style={styles.searchButton}
+                        onPress={() => {
+                            setSelectedCluster(null);   // clear so react zoom to cluster again if select the same one
+                            router.push('/search')}
+                        }
+                    >
+                        <Text style={styles.searchButtonText}>
+                            Search manually
+                        </Text>
+                    </Pressable>
+
+                    <Pressable onPress={enableLocation}>
+                        <Text style={styles.retryText}>
+                            Try location again
+                        </Text>
+                    </Pressable>
+                </View>
+            )}
+            {displayedError && !needsManualSearch &&
+                <Text style={[styles.error, { top: controlsTop + 112 }]}>{displayedError}</Text>
+            }
+            <Pressable
+                style={styles.locationButton}
+                onPress={() => {
+                    enableLocation().catch(() => {
+                    setLocationError('Unable to get your current location.');
+                    });
+                }}
+            >
+                <Ionicons name="locate" size={26} color="#ffffff" />
+            </Pressable>
+        </View>
     );
 }
 
@@ -214,8 +240,8 @@ const styles = StyleSheet.create({
         height: '100%' 
     },
     error: {
+        fontSize: responsiveFontSize(14),
         position: 'absolute',
-        top: 128,
         alignSelf: 'center',
         backgroundColor: 'white',
         marginHorizontal: 16,
@@ -223,20 +249,9 @@ const styles = StyleSheet.create({
         borderRadius: 8,
         elevation: 3,
     },
-    noResults: {
+    info: {
+        fontSize: responsiveFontSize(14),
         position: 'absolute',
-        top: 74,
-        alignSelf: 'center',
-        backgroundColor: '#ffffff',
-        color: '#172b4d',
-        paddingHorizontal: 14,
-        paddingVertical: 8,
-        borderRadius: 8,
-        elevation: 3,
-    },
-    loading: {
-        position: 'absolute',
-        top: 74,
         alignSelf: 'center',
         backgroundColor: '#ffffff',
         color: '#172b4d',
@@ -263,5 +278,68 @@ const styles = StyleSheet.create({
     locationIcon: {
         width: 26,
         height: 26,
+    },
+    locationFallback: {
+        position: 'absolute',
+        left: 24,
+        right: 24,
+        alignSelf: 'center',
+        padding: 20,
+        borderRadius: 16,
+        backgroundColor: '#ffffff',
+        elevation: 5,
+    },
+    locationFallbackTitle: {
+        color: '#172b4d',
+        fontSize: 18,
+        fontWeight: '700',
+        textAlign: 'center',
+    },
+    locationFallbackMessage: {
+        marginTop: 8,
+        color: '#52606d',
+        fontSize: 14,
+        textAlign: 'center',
+    },
+    searchButton: {
+        marginTop: 18,
+        paddingVertical: 12,
+        borderRadius: 10,
+        backgroundColor: '#006eff',
+    },
+    searchButtonText: {
+        color: '#ffffff',
+        fontWeight: '600',
+        textAlign: 'center',
+    },
+    retryText: {
+        marginTop: 14,
+        color: '#006eff',
+        fontWeight: '600',
+        textAlign: 'center',
+    },
+    searchLauncher: {
+        position: 'absolute',
+        left: 16,
+        right: 16,
+        minHeight: 48,
+        paddingHorizontal: 14,
+        borderRadius: 12,
+        flexDirection: 'row',
+        alignItems: 'center',
+        elevation: 5,
+        shadowColor: '#000000',
+        shadowOpacity: 0.18,
+        shadowRadius: 6,
+        shadowOffset: {
+            width: 0,
+            height: 2,
+        },
+    },
+    searchLauncherText: {
+        flex: 1,
+        marginLeft: 10,
+        color: '#52606d',
+        fontSize: responsiveFontSize(16),
     },
 });
