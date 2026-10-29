@@ -86,22 +86,26 @@ export default function SearchBar({
 
       {showSuggestions && (
         <View style={[styles.suggestions, {backgroundColor: colors.background}]}>
-          {suggestions.length > 0 ? suggestions.map((cluster) => (
-            <Pressable
-              accessibilityRole="button"
-              key={cluster.id}
-              onPress={() => onSelectSuggestion(cluster)}
-              style={({ pressed }) => [styles.suggestion, pressed && styles.suggestionPressed]}
-            >
-              <Ionicons name="location-outline" size={20} color={colors.secondaryText} />
-              <View style={styles.suggestionText}>
-                <Text numberOfLines={1} style={[styles.suggestionName, {color: colors.secondaryText}]}>{cluster.courts[0]?.name}</Text>
-                <Text numberOfLines={1} style={[styles.suggestionDetails, {color: colors.secondaryText}]}>
-                  {[cluster.courts[0]?.address, cluster.courts[0]?.sport].filter(Boolean).join(' · ')}
-                </Text>
-              </View>
-            </Pressable>
-          )) : !suggestionsLoading && (
+          {suggestions.length > 0 ? suggestions.map((cluster) => {
+            const representative = cluster.courts.find((court) => court.address) ?? cluster.courts[0];
+
+            return (
+              <Pressable
+                accessibilityRole="button"
+                key={cluster.id}
+                onPress={() => onSelectSuggestion(cluster)}
+                style={({ pressed }) => [styles.suggestion, pressed && styles.suggestionPressed]}
+              >
+                <Ionicons name="location-outline" size={20} color={colors.secondaryText} />
+                <View style={styles.suggestionText}>
+                  <Text numberOfLines={1} style={[styles.suggestionName, {color: colors.secondaryText}]}>{representative?.name ?? 'Unnamed court'}</Text>
+                  <Text numberOfLines={1} style={[styles.suggestionDetails, {color: colors.secondaryText}]}>
+                    {[representative?.address ?? 'Address unavailable', representative?.sport].filter(Boolean).join(' · ')}
+                  </Text>
+                </View>
+              </Pressable>
+            );
+          }) : !suggestionsLoading && (
             <Text style={[styles.emptySuggestion, {color: colors.secondaryText}] }>No stored courts found</Text>
           )}
         </View>
@@ -121,7 +125,6 @@ const styles = StyleSheet.create({
     minHeight: 48,
     paddingHorizontal: 14,
     borderRadius: 12,
-    backgroundColor: '#ffffff',
     flexDirection: 'row',
     alignItems: 'center',
     elevation: 5,
@@ -141,7 +144,6 @@ const styles = StyleSheet.create({
     marginTop: 6,
     overflow: 'hidden',
     borderRadius: 12,
-    backgroundColor: '#ffffff',
     elevation: 5,
     shadowColor: '#000000',
     shadowOpacity: 0.18,

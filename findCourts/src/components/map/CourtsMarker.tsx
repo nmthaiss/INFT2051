@@ -7,6 +7,7 @@ import { useAppTheme } from '@/theme/appTheme';
 type CourtsMarkerProps = {
     clusters: CourtCluster[];
     markerSize: number;
+    onSelect: (cluster: CourtCluster) => void;
 };
 
 function clusterTitle(cluster: CourtCluster) {
@@ -16,7 +17,7 @@ function clusterTitle(cluster: CourtCluster) {
     return namedCourts[0] ?? `${cluster.courts.length} nearby courts`;
 }
 
-export default function CourtsMarker({ clusters, markerSize }: CourtsMarkerProps) {
+export default function CourtsMarker({ clusters, markerSize, onSelect }: CourtsMarkerProps) {
     const { colors } = useAppTheme();
     const clusterMarkerSize = markerSize + 8;
     return (
@@ -26,7 +27,7 @@ export default function CourtsMarker({ clusters, markerSize }: CourtsMarkerProps
             const isCluster = cluster.courts.length > 1;
             const size = isCluster ? clusterMarkerSize : markerSize;
             const sports = [...new Set(cluster.courts.map((court) => court.sport))].join(', ');
-            const address = cluster.courts.find((court) => court.address)?.address;
+            const address = cluster.courts.find((court) => court.address)?.address ?? 'Address unavailable';
             const details = [
                 cluster.courts.length > 1 ? `${cluster.courts.length} courts` : undefined,
                 sports,
@@ -40,8 +41,10 @@ export default function CourtsMarker({ clusters, markerSize }: CourtsMarkerProps
                     latitude: cluster.latitude,
                     longitude: cluster.longitude,
                 }}
-                title={clusterTitle(cluster)}
-                description={details}
+                onPress={(event) => {
+                    event.stopPropagation();
+                    onSelect(cluster);
+                }}
             >
                 {/* change this to the main sport of the court instead of number thats chop */}
                 <View style={[styles.marker, isCluster && styles.clusterMarker, 

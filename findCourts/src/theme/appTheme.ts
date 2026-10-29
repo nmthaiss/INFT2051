@@ -10,6 +10,7 @@ const lightColors = {
     primary: '#006eff',
     error: '#b42318',
     icons: '#52606d',
+    shadow: '#000000',
 };
 
 const darkColors = {
@@ -19,9 +20,10 @@ const darkColors = {
     secondaryText: '#aab4c0',
     border: '#3c4043',
     pressed: '#303134',
-    primary: '#4794ff',
+    primary: '#cdcfd3',
     error: '#ffb4ab',
     icons: '#f0f6ff',
+    shadow: '#000000',
 };
 
 export function useAppTheme() {

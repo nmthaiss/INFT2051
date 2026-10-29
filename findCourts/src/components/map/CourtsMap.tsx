@@ -9,6 +9,7 @@ import { useResponsiveTopOffset } from '@/hooks/useResponsiveTopOffset';
 import { useCourtsContext } from '@/context/CourtsContext';
 import { useAppTheme } from '@/theme/appTheme';
 import { requestForegroundPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
+import CourtDetailsSheet from './CourtDetailSheet';
 
 const NEARBY_REGION_DELTA = 0.12;
 type LocationStatus =
@@ -63,7 +64,7 @@ export default function Map() {
     const displayedClusters =
         selectedCluster && !loadedVersionOfSelectedCluster
             ? [...courtClusters, selectedCluster] : courtClusters; 
-            
+
     const focusedCluster = loadedVersionOfSelectedCluster ?? selectedCluster;
 
     useEffect(() => {
@@ -170,6 +171,7 @@ export default function Map() {
                     <CourtsMarker
                         clusters={displayedClusters}
                         markerSize={markerSize}
+                        onSelect={setSelectedCluster}
                     />
                 )}
 
@@ -178,7 +180,7 @@ export default function Map() {
                 accessibilityRole="button"
                 accessibilityLabel="Search courts"
                 onPress={() => router.push('/search')}
-                style={[styles.searchLauncher, { top: controlsTop , backgroundColor: colors.background}]}
+                style={[styles.searchLauncher, { top: controlsTop , backgroundColor: colors.surface}]}
             >
                 <Ionicons name="search" size={20} color={colors.icons} />
                 
@@ -223,7 +225,7 @@ export default function Map() {
                 </View>
             )}
             {displayedError && !needsManualSearch &&
-                <Text style={[styles.error, { top: controlsTop + 112 }]}>{displayedError}</Text>
+                <Text style={[styles.error, { top: controlsTop + 58 }]}>{displayedError}</Text>
             }
             <Pressable
                 style={styles.locationButton}
@@ -235,6 +237,12 @@ export default function Map() {
             >
                 <Ionicons name="locate" size={26} color="#ffffff" />
             </Pressable>
+            
+            <CourtDetailsSheet
+                key={selectedCluster?.id ?? 'no-court-selected'}
+                cluster={focusedCluster ?? null}
+                onClose={() => setSelectedCluster(null)}
+            />
         </View>
     );
 }

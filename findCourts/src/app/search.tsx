@@ -10,7 +10,7 @@ import { useAppTheme } from "@/theme/appTheme";
 export default function SearchScreen() {
     const { courtClusters, setSelectedCluster } = useCourtsContext();
     const topOffset = useResponsiveTopOffset();
-    const { dark, colors } = useAppTheme();
+    const { colors } = useAppTheme();
     
     const {
         query,
