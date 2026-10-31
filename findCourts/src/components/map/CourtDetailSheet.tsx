@@ -106,8 +106,6 @@ export default function CourtDetailsSheet({ cluster, onClose }: Props) {
     }
 
     // Track the sheet position while dragging anywhere on its surface.
-    // The refs are read only after a gesture starts, never during render.
-    // eslint-disable-next-line react-hooks/refs
     const panResponder = PanResponder.create({
         onMoveShouldSetPanResponder: (_, gesture) =>
             Math.abs(gesture.dy) > 6
@@ -137,6 +135,7 @@ export default function CourtDetailsSheet({ cluster, onClose }: Props) {
                 { mode: 'collapsed', y: collapsedY },
             ];
             const collapsedZoneStart = (defaultY + collapsedY) / 2;
+            // stop a drag from going from expanded to collapsed
             const snapPoints = mode.current === 'expanded'
                 && currentY.current < collapsedZoneStart
                 ? allSnapPoints.filter((point) => point.mode !== 'collapsed')
